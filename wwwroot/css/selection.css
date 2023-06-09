@@ -1,0 +1,31 @@
+﻿.div-main {
+    height: 95%; width: 95%;
+    margin-left: 2.5%; margin-top: 1%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+.div-form {
+    height: 95%; width: 30%;
+    border: 2px solid black;
+}
+#table-checkbox {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#table-radio {
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#submit {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+#resultados {
+    height: 95%;
+    width: 70%;
+    border: 2px solid black;
+}

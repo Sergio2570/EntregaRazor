@@ -1,0 +1,55 @@
+﻿@page
+@model EntregaRazor.Pages.selectionModel
+@{
+    string genero = "";
+}
+<head><link rel="stylesheet" href="./css/selection.css" asp-append-version="true" /></head>
+<div class="div-main">
+    <div class="div-form">
+        <form method="post">
+            <div id="table-checkbox">
+                <fieldset>
+                    <legend>Elemento</legend>
+                    <input type="checkbox" name="Frio" value="" checked="checked" asp-for="Frio"/>
+                    <label for="Frio"> Frio</label>
+                    <br/>
+                    <input type="checkbox" name="Calor" value="" asp-for="Calor" />
+                    <label for="Calor"> Calor</label>
+                    <br/>
+                    <input type="checkbox" name="Electrico" value="" asp-for="Electrico" />
+                    <label for="Electrico"> Electrico</label>
+                    <br/>
+                    <input type="checkbox" name="Toxina" value="" asp-for="Toxina" />
+                    <label for="Toxina"> Toxina</label>
+                    <br/>
+                </fieldset>
+            </div>
+            <div id="table-radio">
+                <fieldset>
+                    <legend>Genero</legend>
+                    <input type="radio" name="genre" value="Masculino" />
+                    <label for="Masculino">Masculino</label><br/>
+                    <input type="radio" name="genre" value="Femenino" />
+                    <label for="Femenino">Femenino</label>
+                    <br />
+                </fieldset>
+                <br />
+                <div id="submit">
+                    <input type="submit" value="Ver">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="resultados">
+        <table>
+            @{
+                
+            }
+            <tr>
+                @{
+                    
+                }
+            </tr>
+        </table>
+    </div>
+</div>

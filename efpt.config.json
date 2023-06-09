@@ -1,0 +1,101 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "WarframeDB",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "EntregaRazor",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Agrietados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Animales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Archguns]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Archmelee]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Archwing]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Centinelas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CuerpoACuerpo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Equipamiento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Mods]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Planetas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Primarias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Recursos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Reliquias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Secundarias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Sindicatos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Warframes]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "ubuntusqlserver.WarframeDB.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

@@ -1,0 +1,29 @@
+﻿    <html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Entrega Razor</title>
+    <link rel="stylesheet" href="./css/index.css" asp-append-version="true" />
+</head>
+<body>
+	<header class="cabecera">
+       <div></div>
+    </header>
+    <nav class="lateral">
+        <br /><br />
+        <a id="enlace" href="/">Inicio</a><br /><br />
+        <a id="enlace" href="selection">Selección</a><br /><br />
+        <a id="enlace" href="dates">Fecha</a><br /><br />
+        <a id="enlace" href="filter">Filtros</a><br /><br />
+    </nav>
+    <main class="pantalla">
+        <div>
+            @RenderBody()
+        </div>
+    </main>    
+    <footer class="footer-page">
+        <div>
+            <h1>Sergio Hernández Da Silva - 1ºCFGS Desarrollo y Aplicaciones Web - Módulo PRO</h1>
+        </div>
+    </footer>
+</body>
+</html>

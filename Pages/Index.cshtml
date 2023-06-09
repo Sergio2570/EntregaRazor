@@ -1,0 +1,30 @@
+﻿@page "/"
+@model EntregaRazor.Pages.IndexModel
+@{
+	ViewData["Title"] = "Portada";
+}
+<head><link rel="stylesheet" href="./css/main.css" asp-append-version="true" /></head>
+<div class="main">
+	<table id="tabla-main">
+		<tr>
+			<td>
+				<a href="selection"><div class="ostronita">
+					<img id="img-ostro" src="./img/Ostronita.png"/>
+					<p>Selección: Filtra warframes por elemento progenitor <br/> y género</p>
+				</div></a>
+			</td>
+			<td>
+				<a href="dates"><div class="solari">
+					<img id="img-solari" src="./img/Solaris.png"/>
+					<p>Fechas: Selecciona una fecha para ver los <br/>parches y cambios</p>
+				</div></a>
+			</td>
+			<td>
+				<a href="filter"><div class="entrati">
+					<img id="img-entrati" src="./img/Entrati.png"/>
+					<p>Filtros: Selecciona tipos de armas para ver<br/> las disponibles</p>
+				</div></a>
+			</td>
+		</tr>
+	</table>
+</div>
