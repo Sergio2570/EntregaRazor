@@ -41,7 +41,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Agrietados>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Agrietad__75E3EFCEC092E5CB");
+                    .HasName("PK__Agrietad__75E3EFCE5131A49B");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -86,7 +86,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Animales>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Animales__75E3EFCEF7738FC0");
+                    .HasName("PK__Animales__75E3EFCE4F582B4D");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -98,7 +98,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archguns>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archguns__75E3EFCEDBD29A41");
+                    .HasName("PK__Archguns__75E3EFCE1B4BCB78");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -135,7 +135,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archmelee>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archmele__75E3EFCE5C88A8D3");
+                    .HasName("PK__Archmele__75E3EFCECB658665");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -163,7 +163,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archwing>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archwing__75E3EFCE563367F4");
+                    .HasName("PK__Archwing__75E3EFCE490DB800");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -175,7 +175,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Centinelas>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Centinel__75E3EFCE7ED677BF");
+                    .HasName("PK__Centinel__75E3EFCE7556C4C3");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -187,7 +187,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<CuerpoAcuerpo>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__CuerpoAC__75E3EFCE5D855672");
+                    .HasName("PK__CuerpoAC__75E3EFCE4C5CAD84");
 
                 entity.ToTable("CuerpoACuerpo");
 
@@ -229,7 +229,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Equipamiento>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Equipami__75E3EFCEE7292A92");
+                    .HasName("PK__Equipami__75E3EFCE3ECF4F7F");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -249,7 +249,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Mods>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Mods__75E3EFCEF4AD6685");
+                    .HasName("PK__Mods__75E3EFCEC1148E77");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -292,7 +292,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Planetas>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Planetas__75E3EFCE46220209");
+                    .HasName("PK__Planetas__75E3EFCEC1DC033D");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(1)
@@ -314,7 +314,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Primarias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Primaria__75E3EFCE7AF3D420");
+                    .HasName("PK__Primaria__75E3EFCE8965E235");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -360,7 +360,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Recursos>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Recursos__75E3EFCED7FA8D18");
+                    .HasName("PK__Recursos__75E3EFCE96F7A6D6");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(1)
@@ -385,7 +385,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Reliquias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Reliquia__75E3EFCEC50CEE71");
+                    .HasName("PK__Reliquia__75E3EFCE6CA9FD73");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(3)
@@ -455,7 +455,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Secundarias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Secundar__75E3EFCEFE7ECC8B");
+                    .HasName("PK__Secundar__75E3EFCE3879883A");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -502,7 +502,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Sindicatos>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Sindicat__75E3EFCE82E87EA8");
+                    .HasName("PK__Sindicat__75E3EFCEC732E808");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -532,7 +532,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Warframes>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Warframe__75E3EFCEDFF2ADC7");
+                    .HasName("PK__Warframe__75E3EFCEDFD73452");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)

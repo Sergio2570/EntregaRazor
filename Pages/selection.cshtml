@@ -41,32 +41,32 @@
     </div>
     <div id="resultados">
         <table>
-        @{
-            List<string> nombres = new List<string>();
-            if (Model.Frio == true)
-            {
-                nombres.AddRange((from Warframes in Model.datos.Warframes 
-                    where Warframes.Genero == Model.Genero && Warframes.Elemento == "Frio"
-                    select Warframes.Nombre).ToList());
-            }
-            if (Model.Calor == true)
-            {
-                nombres.AddRange((from Warframes in Model.datos.Warframes 
-                    where Warframes.Genero == Model.Genero && Warframes.Elemento == "Calor" 
-                    select Warframes.Nombre).ToList());
-            }
-            if (Model.Electrico == true)
-            {
-                nombres.AddRange((from Warframes in Model.datos.Warframes 
-                    where Warframes.Genero == Model.Genero && Warframes.Elemento == "Electrico" 
-                    select Warframes.Nombre).ToList());
-            }
-            if (Model.Toxina == true)
-            {
-                nombres.AddRange((from Warframes in Model.datos.Warframes 
-                    where Warframes.Genero == Model.Genero && Warframes.Elemento == "Toxina" 
-                    select Warframes.Nombre).ToList());
-            }
+            @{
+                List<string> nombres = new List<string>();
+                if (Model.Frio == true)
+                {
+                    nombres.AddRange((from Warframes in Model.datos.Warframes 
+                                      where Warframes.Genero == Model.Genero && Warframes.Elemento == "Frio"
+                                      select Warframes.Nombre).ToList());
+                }
+                if (Model.Calor == true)
+                {
+                    nombres.AddRange((from Warframes in Model.datos.Warframes 
+                                      where Warframes.Genero == Model.Genero && Warframes.Elemento == "Calor" 
+                                      select Warframes.Nombre).ToList());
+                }
+                if (Model.Electrico == true)
+                {
+                    nombres.AddRange((from Warframes in Model.datos.Warframes 
+                                      where Warframes.Genero == Model.Genero && Warframes.Elemento == "Electrico" 
+                                      select Warframes.Nombre).ToList());
+                }
+                if (Model.Toxina == true)
+                {
+                    nombres.AddRange((from Warframes in Model.datos.Warframes 
+                                      where Warframes.Genero == Model.Genero && Warframes.Elemento == "Toxina" 
+                                      select Warframes.Nombre).ToList());
+                }
             foreach (var n in nombres)
             {
             <tr>

@@ -83,7 +83,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "ubuntusqlserver.WarframeDB.dbo",
+   "UiHint": "yuripcdaw\\localdb#f53bebba.WarframeDB.dbo",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

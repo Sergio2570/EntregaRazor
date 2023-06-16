@@ -64,3 +64,47 @@ fieldset{
     width: 70%;
     border: 2px solid black;
 }
+#tablaResul {
+    border: solid 1px black;
+    width: 100%;
+}
+td{
+    border: solid 1px black;
+    text-align:center;
+}
+/*Armas*/
+#Nombre {
+    width: 150px;
+}
+#Tipo {
+    width: 150px;
+}
+#Dmg {
+    width: 60px;
+}
+#Cargador {
+    width: 70px;
+}
+#Municion {
+    width: 75px;
+}
+#Cadencia {
+    width: 85px;
+}
+#Faccion {
+
+}
+/*Melee*/
+#mNombre {
+
+}
+#mTipo {
+}
+#mDmg {
+}
+#mDmgUp {
+}
+#mRadio {
+}
+#mFaccion {
+}

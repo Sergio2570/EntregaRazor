@@ -19,12 +19,13 @@
                     <input type="submit" value="Seleccionar">
                 </div>
             </fieldset>
-        </form>
+        </form> 
         <form method="post">
             <fieldset id="fieldset-second">
-                @{
-                    if (Model.RanuraSelected == "select-primary")
-                    {
+            @{
+                if (Model.RanuraSelected == "select-primary")
+                {
+                    <form method="post">
                         <div id="div-primary">
                             <label for="select-primary">Seleccione tipo de arma primaria:</label>
                             <br />
@@ -37,9 +38,11 @@
                                 <input type="submit" value="Ver">
                             </div>
                         </div>
-                    }
-                    if (Model.RanuraSelected == "select-secondary")
-                    {
+                    </form>
+                }
+                if (Model.RanuraSelected == "select-secondary")
+                {
+                    <form method="post">
                         <div id="div-secondary">
                             <label for="select-secondary">Seleccione tipo de arma secundaria:</label>
                             <br />
@@ -52,9 +55,11 @@
                                 <input type="submit" value="Ver">
                             </div>
                         </div>
-                    }
-                    if (Model.RanuraSelected == "select-melee")
-                    {
+                    </form>
+                }
+                if (Model.RanuraSelected == "select-melee")
+                {
+                    <form method="post">
                         <div id="div-melee">
                             <label for="select-melee">Seleccione tipo de arma cuerpo a cuerpo:</label>
                             <br />
@@ -67,90 +72,89 @@
                                 <input type="submit" value="Ver">
                             </div>
                         </div>
-                    }
+                    </form>
                 }
+            }
             </fieldset>
         </form>
     </div>
     <div id="resultados">
-        <table>
-            @{
-                if(Model.TypeSelected == "select-melee")
+        <table id="tablaResul">
+        @{
+            if(Model.TypeSelected == "select-melee")
+            {
+                <tr>
+                    <td id="mNombre">Nombre</td>
+                    <td id="mTipo">Tipo</td>
+                    <td id="mDmg">Daño</td>
+                    <td id="mDmgUp">Daño pesado</td>
+                    <td id="mRadio">Radio</td>
+                    <td id="mFaccion">Facción</td>
+                </tr>
+                List<EntregaRazor.Models.CuerpoAcuerpo> lista = ((from CuerpoAcuerpo in Model.datos.CuerpoAcuerpo
+                                                                    select CuerpoAcuerpo).ToList());
+                foreach (var mostrar in lista)
                 {
                     <tr>
-                        <td>Nombre</td>
-                        <td>Tipo</td>
-                        <td>Daño</td>
-                        <td>Daño pesado</td>
-                        <td>Radio</td>
-                        <td>Facción</td>
+                        <td id="mNombre">@mostrar.Nombre</td>
+                        <td id="mTipo">@mostrar.Tipo</td>
+                        <td id="mDmg">@mostrar.Dmg</td>
+                        <td id="mDmgUp">@mostrar.DmgPesado</td>
+                        <td id="mRadio">@mostrar.Radio</td>
+                        <td id="mFaccion">@mostrar.Faccion</td>
                     </tr>
-                    List<EntregaRazor.Models.CuerpoAcuerpo> lista = ((from CuerpoAcuerpo in Model.datos.CuerpoAcuerpo
-                                                                      select CuerpoAcuerpo).ToList());
+                }
+            }
+            else
+            {
+                <tr>
+                    <td id="Nombre">Nombre</td>
+                    <td id="Tipo">Tipo</td>
+                    <td id="Dmg">Daño</td>
+                    <td id="Cargador">Cargador</td>
+                    <td id="Municion">Munición</td>
+                    <td id="Cadencia">Cadencia (disparos/m)</td>
+                    <td id="Faccion">Facción</td>
+                </tr>
+                if (Model.TypeSelected == "select-primary")
+                {
+
+                    List<EntregaRazor.Models.Primarias> lista = ((from Primarias in Model.datos.Primarias
+                                                                    select Primarias).ToList());
                     foreach (var mostrar in lista)
                     {
                         <tr>
-                            <td>@mostrar.Nombre</td>
-                            <td>@mostrar.Tipo</td>
-                            <td>@mostrar.Dmg</td>
-                            <td>@mostrar.DmgPesado</td>
-                            <td>@mostrar.Radio</td>
-                            <td>@mostrar.Faccion</td>
+                            <td id="Nombre">@mostrar.Nombre</td>
+                            <td id="Tipo">@mostrar.Tipo</td>
+                            <td id="Dmg">@mostrar.Dmg</td>
+                            <td id="Cargador">@mostrar.Cargador</td>
+                            <td id="Municion">@mostrar.Municion</td>
+                            <td id="Cadencia">@mostrar.Cadencia</td>
+                            <td id="Faccion">@mostrar.Faccion</td>
                         </tr>
                     }
                 }
-                else
+                if (Model.TypeSelected == "select-secondary")
                 {
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Tipo</td>
-                        <td>Daño</td>
-                        <td>Cargador</td>
-                        <td>Munición</td>
-                        <td>Cadencia (disparos/m)</td>
-                        <td>Facción</td>
-                    </tr>
-                    if (Model.TypeSelected == "select-primary")
+
+                    List<EntregaRazor.Models.Secundarias> lista = ((from Secundarias in Model.datos.Secundarias
+                                                                    select Secundarias).ToList());
+
+                    foreach (var mostrar in lista)
                     {
-
-                        List<EntregaRazor.Models.Primarias> lista = ((from Primarias in Model.datos.Primarias
-                                                                      select Primarias).ToList());
-                        foreach (var mostrar in lista)
-                        {
-                            <tr>
-                                <td>@mostrar.Nombre</td>
-                                <td>@mostrar.Tipo</td>
-                                <td>@mostrar.Dmg</td>
-                                <td>@mostrar.Cargador</td>
-                                <td>@mostrar.Municion</td>
-                                <td>@mostrar.Cadencia</td>
-                                <td>@mostrar.Faccion</td>
-                            </tr>
-                        }
+                        <tr>
+                            <td id="Nombre">@mostrar.Nombre</td>
+                            <td id="Tipo">@mostrar.Tipo</td>
+                            <td id="Dmg">@mostrar.Dmg</td>
+                            <td id="Cargador">@mostrar.Cargador</td>
+                            <td id="Municion">@mostrar.Municion</td>
+                            <td id="Cadencia">@mostrar.Cadencia</td>
+                            <td id="Faccion">@mostrar.Faccion</td>
+                        </tr>
                     }
-                    if (Model.TypeSelected == "select-secondary")
-                    {
-
-                        List<EntregaRazor.Models.Secundarias> lista = ((from Secundarias in Model.datos.Secundarias
-                                                                        select Secundarias).ToList());
-
-                        foreach (var mostrar in lista)
-                        {
-                            <tr>
-                                <td>@mostrar.Nombre</td>
-                                <td>@mostrar.Tipo</td>
-                                <td>@mostrar.Dmg</td>
-                                <td>@mostrar.Cargador</td>
-                                <td>@mostrar.Municion</td>
-                                <td>@mostrar.Cadencia</td>
-                                <td>@mostrar.Faccion</td>
-                            </tr>
-                        }
-                    }
-                    
                 }
-
             }
+        }
         </table>
     </div>
 </div>
