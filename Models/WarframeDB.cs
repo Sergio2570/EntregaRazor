@@ -27,6 +27,7 @@ namespace EntregaRazor.Models
         public virtual DbSet<CuerpoAcuerpo> CuerpoAcuerpo { get; set; }
         public virtual DbSet<Equipamiento> Equipamiento { get; set; }
         public virtual DbSet<Mods> Mods { get; set; }
+        public virtual DbSet<Parches> Parches { get; set; }
         public virtual DbSet<Planetas> Planetas { get; set; }
         public virtual DbSet<Primarias> Primarias { get; set; }
         public virtual DbSet<Recursos> Recursos { get; set; }
@@ -40,7 +41,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Agrietados>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Agrietad__75E3EFCE69D75AC7");
+                    .HasName("PK__Agrietad__75E3EFCEC092E5CB");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -85,7 +86,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Animales>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Animales__75E3EFCE5396A64A");
+                    .HasName("PK__Animales__75E3EFCEF7738FC0");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -97,7 +98,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archguns>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archguns__75E3EFCEAA80DA6B");
+                    .HasName("PK__Archguns__75E3EFCEDBD29A41");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -113,7 +114,7 @@ namespace EntregaRazor.Models
                     .HasColumnType("decimal(9, 2)")
                     .HasColumnName("CD");
 
-                entity.Property(e => e.Daño).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.Dmg).HasColumnType("decimal(9, 2)");
 
                 entity.Property(e => e.Faccion)
                     .IsRequired()
@@ -134,7 +135,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archmelee>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archmele__75E3EFCE9AF5A71E");
+                    .HasName("PK__Archmele__75E3EFCE5C88A8D3");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -148,7 +149,7 @@ namespace EntregaRazor.Models
                     .HasColumnType("decimal(9, 2)")
                     .HasColumnName("CD");
 
-                entity.Property(e => e.Daño).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.Dmg).HasColumnType("decimal(9, 2)");
 
                 entity.Property(e => e.Radio).HasColumnType("decimal(9, 2)");
 
@@ -162,7 +163,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Archwing>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Archwing__75E3EFCEF87A8C68");
+                    .HasName("PK__Archwing__75E3EFCE563367F4");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -174,7 +175,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Centinelas>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Centinel__75E3EFCE9EF1C237");
+                    .HasName("PK__Centinel__75E3EFCE7ED677BF");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -186,7 +187,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<CuerpoAcuerpo>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__CuerpoAC__75E3EFCE7DB86931");
+                    .HasName("PK__CuerpoAC__75E3EFCE5D855672");
 
                 entity.ToTable("CuerpoACuerpo");
 
@@ -202,9 +203,9 @@ namespace EntregaRazor.Models
                     .HasColumnType("decimal(9, 2)")
                     .HasColumnName("CD");
 
-                entity.Property(e => e.Daño).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.Dmg).HasColumnType("decimal(9, 2)");
 
-                entity.Property(e => e.DañoPesado).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.DmgPesado).HasColumnType("decimal(9, 2)");
 
                 entity.Property(e => e.Faccion)
                     .IsRequired()
@@ -228,7 +229,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Equipamiento>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Equipami__75E3EFCED41EC1CA");
+                    .HasName("PK__Equipami__75E3EFCEE7292A92");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -248,7 +249,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Mods>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Mods__75E3EFCEAB7B6AEF");
+                    .HasName("PK__Mods__75E3EFCEF4AD6685");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -277,10 +278,21 @@ namespace EntregaRazor.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Parches>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.Fecha).HasColumnType("datetime");
+
+                entity.Property(e => e.Parche)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Planetas>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Planetas__75E3EFCEE2119395");
+                    .HasName("PK__Planetas__75E3EFCE46220209");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(1)
@@ -302,7 +314,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Primarias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Primaria__75E3EFCE8E2686C6");
+                    .HasName("PK__Primaria__75E3EFCE7AF3D420");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -318,7 +330,7 @@ namespace EntregaRazor.Models
                     .HasColumnType("decimal(9, 2)")
                     .HasColumnName("CD");
 
-                entity.Property(e => e.Daño).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.Dmg).HasColumnType("decimal(9, 2)");
 
                 entity.Property(e => e.Faccion)
                     .IsRequired()
@@ -348,7 +360,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Recursos>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Recursos__75E3EFCE6151A901");
+                    .HasName("PK__Recursos__75E3EFCED7FA8D18");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(1)
@@ -373,7 +385,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Reliquias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Reliquia__75E3EFCE9F209C5C");
+                    .HasName("PK__Reliquia__75E3EFCEC50CEE71");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(3)
@@ -443,7 +455,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Secundarias>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Secundar__75E3EFCE87E14FD6");
+                    .HasName("PK__Secundar__75E3EFCEFE7ECC8B");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -459,7 +471,7 @@ namespace EntregaRazor.Models
                     .HasColumnType("decimal(9, 2)")
                     .HasColumnName("CD");
 
-                entity.Property(e => e.Daño).HasColumnType("decimal(9, 2)");
+                entity.Property(e => e.Dmg).HasColumnType("decimal(9, 2)");
 
                 entity.Property(e => e.Faccion)
                     .IsRequired()
@@ -490,7 +502,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Sindicatos>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Sindicat__75E3EFCE443541B9");
+                    .HasName("PK__Sindicat__75E3EFCE82E87EA8");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
@@ -520,7 +532,7 @@ namespace EntregaRazor.Models
             modelBuilder.Entity<Warframes>(entity =>
             {
                 entity.HasKey(e => e.Nombre)
-                    .HasName("PK__Warframe__75E3EFCEE65053AF");
+                    .HasName("PK__Warframe__75E3EFCEDFF2ADC7");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)

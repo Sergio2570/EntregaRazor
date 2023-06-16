@@ -1,0 +1,98 @@
+﻿@*@page
+@using EntregaRazor.Models;
+@model EntregaRazor.Pages.rivensModel
+@{
+    string Nombre = "";
+    string Arma = "";
+    string Buff1 = "";
+    decimal Valor1 = 0;
+    string? Buff2;
+    decimal? Valor2;
+    string? Buff3;
+    decimal? Valor3;
+    string? DeBuff = "";
+    decimal? ValorDebuff = 0;
+    string Propietario = "";
+}
+<head>
+    <link rel="stylesheet" href="./css/dates.css" asp-append-version="true" />
+</head>
+<div class="div-main">
+    <div class="div-form">
+        <form method="post">
+            <table id="table-form" border="">
+                <tr>
+                    <td colspan="2"><label for="nombre">Nombre:</label></td>
+                    <td colspan="2"><input type="text" id="nombre" name="nombre" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="arma">Arma:</label></td>
+                    <td colspan="2"><input type="text" id="arma" name="arma" /></td></td>
+                </tr>
+                <tr>
+                    <td><label for="buff1">Buff 1:</label></td>
+                    <td><input type="text" id="buff1" name="buff1" /></td>
+                    <td><label for="valor1">Valor:</label></td>
+                    <td><input type="number" id="valor1" name="valor1" /></td>
+                </tr>
+                <tr>
+                    <td><label for="buff2">Buff 2:</label></td>
+                    <td><input type="text" id="buff2" name="buff2" /></td>
+                    <td><label for="valor2">Valor:</label></td>
+                    <td><input type="number" id="valor2" name="valor2" /></td>
+                </tr>
+                <tr>
+                    <td><label for="buff3">Buff 3:</label></td>
+                    <td><input type="text" id="buff3" name="buff3" /></td>
+                    <td><label for="valor3">Valor:</label></td>
+                    <td><input type="number" id="valor3" name="valor3" /></td>
+                </tr>
+                <tr>
+                    <td><label for="debuff">DeBuff:</label></td>
+                    <td><input type="text" id="debuff" name="debuff" /></td>
+                    <td><label for="valorDebuff">Valor:</label></td>
+                    <td><input type="number" id="valorDebuff" name="valorDebuff" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="propietario">Propietario:</label></td>
+                    <td colspan="2"><input type="text" id="propietario" name="propietario" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Enviar" /></td>
+                </tr>
+            </table>
+        </form>
+        @{
+            
+        }
+    </div>
+    <div id="resultados">
+        <table>
+            <tr>
+                <td>Arma</td>
+                <td>Nombre</td>
+                <td>Buff 1</td>
+                <td>Buff 2</td>
+                <td>Buff 3</td>
+                <td>Debuff</td>
+                <td>Propietario</td>
+            </tr>
+            @{
+                List<EntregaRazor.Models.Agrietados> lista = ((from Agrietados in Model.datos.Agrietados
+                                         select Agrietados).ToList());
+                foreach (var mostrar in lista)
+                {
+                    <tr>
+                        <td>@mostrar.Arma</td>
+                        <td>@mostrar.Nombre</td>
+                        <td>@mostrar.Valor1</td>
+                        <td>@mostrar.Valor2</td>
+                        <td>@mostrar.Valor3</td>
+                        <td>@mostrar.ValorDebuff</td>
+                        <td>@mostrar.Propietario</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>*@

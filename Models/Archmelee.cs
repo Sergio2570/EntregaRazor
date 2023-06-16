@@ -8,7 +8,7 @@ namespace EntregaRazor.Models
     public partial class Archmelee
     {
         public string Nombre { get; set; }
-        public decimal Daño { get; set; }
+        public decimal Dmg { get; set; }
         public decimal Velocidad { get; set; }
         public decimal Radio { get; set; }
         public decimal Cc { get; set; }

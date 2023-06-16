@@ -1,7 +1,44 @@
 ﻿@page
+@using EntregaRazor.Models;
 @model EntregaRazor.Pages.datesModel
-@{
-}
-<div>
-    <p>Esto es una zona de fechas</p>
+
+<head><link rel="stylesheet" href="./css/dates.css" asp-append-version="true" /></head>
+<div class="div-main">
+    <div class="div-form">
+        <form method="post">
+            <span id="contexto">
+                Las fechas son desde la versión 1.0 (26/10/2012)
+                hasta la versión 6.2 (18/02/2013), se mostrarán
+                las fechas posteriores.
+            </span>
+            <fieldset>
+                <label for="fecha">Seleccione una fecha:</label>
+                <input type="date" id="fecha" name="fecha" />
+                <br />
+                <div id="submit">
+                    <input type="submit" value="Ver">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div id="resultados">
+        <table>
+            @{
+                List<string> lParche = ((from Parches in Model.datos.Parches
+                                         select Parches.Parche).ToList());
+                List<DateTime?> lFechas = new List<DateTime?>();
+                lFechas.AddRange(((from Parches in Model.datos.Parches
+                                   select Parches.Fecha).ToList()));
+                for (int i = 0; i < lFechas.Count(); i++)
+                {
+                    <tr>
+                        @if (lFechas[i] > Model.Fecha)
+                        {
+                            <td>@lParche[i] | @lFechas[i]</td>
+                        }
+                    </tr>
+                }
+        }
+        </table>
+    </div>
 </div>

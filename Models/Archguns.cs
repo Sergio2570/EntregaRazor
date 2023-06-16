@@ -8,7 +8,7 @@ namespace EntregaRazor.Models
     public partial class Archguns
     {
         public string Nombre { get; set; }
-        public decimal Daño { get; set; }
+        public decimal Dmg { get; set; }
         public int Municion { get; set; }
         public int Cargador { get; set; }
         public decimal Recarga { get; set; }

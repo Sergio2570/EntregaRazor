@@ -10,7 +10,7 @@ namespace EntregaRazor.Models
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Secundario { get; set; }
-        public decimal Daño { get; set; }
+        public decimal Dmg { get; set; }
         public int Municion { get; set; }
         public int Cargador { get; set; }
         public decimal Recarga { get; set; }

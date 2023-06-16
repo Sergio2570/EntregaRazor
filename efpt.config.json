@@ -51,6 +51,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Parches]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Planetas]",
          "ObjectType": 0
       },

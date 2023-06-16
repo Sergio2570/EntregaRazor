@@ -9,8 +9,8 @@ namespace EntregaRazor.Models
     {
         public string Nombre { get; set; }
         public string Tipo { get; set; }
-        public decimal Daño { get; set; }
-        public decimal DañoPesado { get; set; }
+        public decimal Dmg { get; set; }
+        public decimal DmgPesado { get; set; }
         public decimal Velocidad { get; set; }
         public decimal Radio { get; set; }
         public decimal Cc { get; set; }

@@ -2,6 +2,155 @@
 @model EntregaRazor.Pages.filterModel
 @{
 }
-<div>
-    <p>Esto es una zona de filtrado</p>
+<head>
+    <link rel="stylesheet" href="./css/filter.css" asp-append-version="true" />
+</head>
+<div class="div-main">
+    <div class="div-form">
+        <form method="get">
+            <fieldset id="fieldset-main">
+                <label for="select-main">Seleccione ranura de arma:</label>
+                <select name="RanuraSelected" id="select-main">
+                    <option value="select-primary" asp-for="RanuraSelected">Primaria</option>
+                    <option value="select-secondary" asp-for="RanuraSelected">Secundaria</option>
+                    <option value="select-melee" asp-for="RanuraSelected">Cuerpo a Cuerpo</option>
+                </select>
+                <div id="submit">
+                    <input type="submit" value="Seleccionar">
+                </div>
+            </fieldset>
+        </form>
+        <form method="post">
+            <fieldset id="fieldset-second">
+                @{
+                    if (Model.RanuraSelected == "select-primary")
+                    {
+                        <div id="div-primary">
+                            <label for="select-primary">Seleccione tipo de arma primaria:</label>
+                            <br />
+                            <select name="select-primary" id="select-primary">
+                                <option value="Arco" asp-for="TypeSelected">Arco</option>
+                                <option value="Lanzador" asp-for="TypeSelected">Lanzador</option>
+                                <option value="Ballesta" asp-for="TypeSelected">Ballesta</option>
+                            </select>
+                            <div id="submit">
+                                <input type="submit" value="Ver">
+                            </div>
+                        </div>
+                    }
+                    if (Model.RanuraSelected == "select-secondary")
+                    {
+                        <div id="div-secondary">
+                            <label for="select-secondary">Seleccione tipo de arma secundaria:</label>
+                            <br />
+                            <select name="select-secondary" id="select-secondary">
+                                <option value="Pistolas" asp-for="TypeSelected">Pistolas</option>
+                                <option value="Duales" asp-for="TypeSelected">Duales</option>
+                                <option value="Arrojadizas" asp-for="TypeSelected">Arrojadizas</option>
+                            </select>
+                            <div id="submit">
+                                <input type="submit" value="Ver">
+                            </div>
+                        </div>
+                    }
+                    if (Model.RanuraSelected == "select-melee")
+                    {
+                        <div id="div-melee">
+                            <label for="select-melee">Seleccione tipo de arma cuerpo a cuerpo:</label>
+                            <br />
+                            <select name="select-melee" id="select-melee">
+                                <option value="Espada" asp-for="TypeSelected">Espada</option>
+                                <option value="Punios" asp-for="TypeSelected">Puños</option>
+                                <option value="Sable-Pistola" asp-for="TypeSelected">Sable-Pistola</option>
+                            </select>
+                            <div id="submit">
+                                <input type="submit" value="Ver">
+                            </div>
+                        </div>
+                    }
+                }
+            </fieldset>
+        </form>
+    </div>
+    <div id="resultados">
+        <table>
+            @{
+                if(Model.TypeSelected == "select-melee")
+                {
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Tipo</td>
+                        <td>Daño</td>
+                        <td>Daño pesado</td>
+                        <td>Radio</td>
+                        <td>Facción</td>
+                    </tr>
+                    List<EntregaRazor.Models.CuerpoAcuerpo> lista = ((from CuerpoAcuerpo in Model.datos.CuerpoAcuerpo
+                                                                      select CuerpoAcuerpo).ToList());
+                    foreach (var mostrar in lista)
+                    {
+                        <tr>
+                            <td>@mostrar.Nombre</td>
+                            <td>@mostrar.Tipo</td>
+                            <td>@mostrar.Dmg</td>
+                            <td>@mostrar.DmgPesado</td>
+                            <td>@mostrar.Radio</td>
+                            <td>@mostrar.Faccion</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Tipo</td>
+                        <td>Daño</td>
+                        <td>Cargador</td>
+                        <td>Munición</td>
+                        <td>Cadencia (disparos/m)</td>
+                        <td>Facción</td>
+                    </tr>
+                    if (Model.TypeSelected == "select-primary")
+                    {
+
+                        List<EntregaRazor.Models.Primarias> lista = ((from Primarias in Model.datos.Primarias
+                                                                      select Primarias).ToList());
+                        foreach (var mostrar in lista)
+                        {
+                            <tr>
+                                <td>@mostrar.Nombre</td>
+                                <td>@mostrar.Tipo</td>
+                                <td>@mostrar.Dmg</td>
+                                <td>@mostrar.Cargador</td>
+                                <td>@mostrar.Municion</td>
+                                <td>@mostrar.Cadencia</td>
+                                <td>@mostrar.Faccion</td>
+                            </tr>
+                        }
+                    }
+                    if (Model.TypeSelected == "select-secondary")
+                    {
+
+                        List<EntregaRazor.Models.Secundarias> lista = ((from Secundarias in Model.datos.Secundarias
+                                                                        select Secundarias).ToList());
+
+                        foreach (var mostrar in lista)
+                        {
+                            <tr>
+                                <td>@mostrar.Nombre</td>
+                                <td>@mostrar.Tipo</td>
+                                <td>@mostrar.Dmg</td>
+                                <td>@mostrar.Cargador</td>
+                                <td>@mostrar.Municion</td>
+                                <td>@mostrar.Cadencia</td>
+                                <td>@mostrar.Faccion</td>
+                            </tr>
+                        }
+                    }
+                    
+                }
+
+            }
+        </table>
+    </div>
 </div>

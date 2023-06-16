@@ -3,6 +3,7 @@ using EntregaRazor.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data.Common;
 
 namespace EntregaRazor.Pages
 {
@@ -16,6 +17,8 @@ namespace EntregaRazor.Pages
         public bool Electrico { get; set; }
         [BindProperty]
         public bool Toxina { get; set; }
+        [BindProperty]
+        public string? Genero { get; set; }
 
         public readonly WarframeDB datos;
         public selectionModel(WarframeDB datos)
@@ -28,7 +31,8 @@ namespace EntregaRazor.Pages
             var calor = Calor;
             var electrico = Electrico;
             var toxina = Toxina;
-            return Page();
+            var genre = Genero;
+            return Page();  
         }
         
     }

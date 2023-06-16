@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EntregaRazor.Models
 {
-    public class Warframes
+    public partial class Warframes
     {
         public string Nombre { get; set; }
         public string Genero { get; set; }
@@ -15,17 +15,5 @@ namespace EntregaRazor.Models
         public int Energia { get; set; }
         public decimal Velocidad { get; set; }
         public string Elemento { get; set; }
-
-        //public Warframes(string nombre, string genero, int vida, int escudo, int armadura, int energia, decimal velocidad, string elemento)
-        //{
-        //    Nombre = nombre;
-        //    Genero = genero;
-        //    Vida = vida;
-        //    Escudo = escudo;
-        //    Armadura = armadura;
-        //    Energia = energia;
-        //    Velocidad = velocidad;
-        //    Elemento = elemento;
-        //}
     }
 }
